@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { vapi } from "@/lib/vapi";
+// import the Vapi client, not the API handler
+import {vapi} from "@/lib/vapi";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -120,7 +121,7 @@ const GenerateProgramPage = () => {
     };
   }, []);
 
-  const toggleCall = async () => {
+const toggleCall = async () => {
     if (callActive) vapi.stop();
     else {
       try {
@@ -144,6 +145,7 @@ const GenerateProgramPage = () => {
       }
     }
   };
+
 
   return (
     <div className="flex flex-col min-h-screen text-foreground overflow-hidden  pb-6 pt-24">
@@ -198,14 +200,14 @@ const GenerateProgramPage = () => {
                 <div className="relative w-full h-full rounded-full bg-card flex items-center justify-center border border-border overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-secondary/10"></div>
                   <img
-                    src="/ai-avatar.png"
+                    src="hero-ai7.png"
                     alt="AI Assistant"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
 
-              <h2 className="text-xl font-bold text-foreground">CodeFlex AI</h2>
+              <h2 className="text-xl font-bold text-foreground">FitSoul AI</h2>
               <p className="text-sm text-muted-foreground mt-1">Fitness & Diet Coach</p>
 
               {/* SPEAKING INDICATOR */}
@@ -271,7 +273,7 @@ const GenerateProgramPage = () => {
               {messages.map((msg, index) => (
                 <div key={index} className="message-item animate-fadeIn">
                   <div className="font-semibold text-xs text-muted-foreground mb-1">
-                    {msg.role === "assistant" ? "CodeFlex AI" : "You"}:
+                    {msg.role === "assistant" ? "FitSoul AI" : "You"}:
                   </div>
                   <p className="text-foreground">{msg.content}</p>
                 </div>

@@ -1,5 +1,5 @@
 // constants/index.ts
-
+"use client";
 export const USER_PROGRAMS = [
   {
     id: 1,
