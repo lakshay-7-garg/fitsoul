@@ -129,7 +129,7 @@ http.route({
       const payload = await request.json();
 
       const {
-        user_id,
+        userId,
         age,
         height,
         weight,
@@ -247,11 +247,12 @@ http.route({
 
       // save to our DB: CONVEX
       const planId = await ctx.runMutation(api.plans.createPlan, {
-        userId: user_id,
+        userId,
         dietPlan,
         isActive: true,
         workoutPlan,
         name: `${fitness_goal} Plan - ${new Date().toLocaleDateString()}`,
+        // schedule: workoutPlan.schedule,   // Removed because 'schedule' is not a valid property
       });
 
       return new Response(
