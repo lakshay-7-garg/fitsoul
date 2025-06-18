@@ -7,7 +7,8 @@ const Footer = () => {
       {/* Top border glow */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo and Copyright */}
           <div className="flex flex-col items-center md:items-start gap-2">

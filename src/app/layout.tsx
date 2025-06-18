@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "tw-animate-css";
 
 import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
 import Navbar from "@/components/Navbar";

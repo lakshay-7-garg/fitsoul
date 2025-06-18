@@ -31,7 +31,7 @@ const ProfilePage = () => {
     : activePlan;
 
   return (
-    <section className="relative z-10 pt-12 pb-32 flex-grow container mx-auto px-4">
+    <section className="relative z-10 pt-12 pb-32 flex-grow max-w-7xl mx-auto px-6">
       <ProfileHeader user={user} />
 
       {allPlans && allPlans?.length > 0 ? (
@@ -74,7 +74,7 @@ const ProfilePage = () => {
           {/* PLAN DETAILS */}
 
           {currentPlan && (
-            <div className="relative backdrop-blur-sm border border-border rounded-lg p-6">
+            <div className="relative backdrop-blur-sm border border-border rounded-lg p-8">
               <CornerElements />
 
               <div className="flex items-center gap-2 mb-4">
@@ -128,12 +128,14 @@ const ProfilePage = () => {
                             </div>
                           </AccordionTrigger>
 
-                          <AccordionContent className="pb-4 px-4">
+                          <AccordionContent className="p-6 bg-background/50 rounded-b-lg">
+
                             <div className="space-y-3 mt-2">
                               {exerciseDay.routines.map((routine, routineIndex) => (
                                 <div
                                   key={routineIndex}
-                                  className="border border-border rounded p-3 bg-background/50"
+                                  className="border border-border rounded-lg p-4 bg-background/70"
+
                                 >
                                   <div className="flex justify-between items-start mb-2">
                                     <h4 className="font-semibold text-foreground">
