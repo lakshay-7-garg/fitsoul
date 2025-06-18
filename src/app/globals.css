@@ -1,13 +1,14 @@
+
 html {
   /* 100% is 16px by default; 90% → 14.4px, 95% → 15.2px */
   font-size: 90%;
 }
-
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
 
-:root {
+@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -173,12 +174,10 @@ html {
 
 @layer base {
   * {
-    border-color: var(--color-border, var(--border));
-    outline-color: color-mix(in srgb, var(--color-ring, var(--ring)) 50%, transparent);
+    @apply border-border outline-ring/50;
   }
   body {
-    background-color: var(--color-background, var(--background));
-    color: var(--color-foreground, var(--foreground));
+    @apply bg-background text-foreground;
   }
   /* https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor */
   button:not(:disabled),
